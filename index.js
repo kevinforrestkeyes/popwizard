@@ -24,7 +24,7 @@ app.get('/get-depop-products', async (req, res, next) => {
 });
 
 app.get('/update-depop-products', function (req, res) {
-	res.send({ status: 'updating products' });
+	res.send({ status: 'taking care of it 🐸' });
 	updateProducts();
 });
 

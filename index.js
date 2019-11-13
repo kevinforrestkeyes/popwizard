@@ -1,7 +1,6 @@
-import { getDepopProductsFromUser } from './lib/depop';
 import fetch from 'node-fetch';
 
-import { getDepopProducts, updateDepopProducts, getUpdateStatus } from './lib/controller';
+import { getProducts, updateProducts, getUpdateStatus } from './lib/controller';
 
 const express = require('express');
 const app = express();
@@ -19,14 +18,14 @@ app.get('/', function (req, res) {
 });
 
 app.get('/get-depop-products', async (req, res, next) => {
-	getDepopProducts()
+	getProducts()
 		.then((data) => res.send(data))
 		.catch((err) => console.error(err));
 });
 
 app.get('/update-depop-products', function (req, res) {
 	res.send({ status: 'updating products' });
-	updateDepopProducts();
+	updateProducts();
 });
 
 app.get('/scrape-status', function (req, res) {

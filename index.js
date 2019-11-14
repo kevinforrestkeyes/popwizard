@@ -1,12 +1,12 @@
 import fetch from 'node-fetch';
 
-import { getProducts, updateProducts, getUpdateStatus } from './lib/controller';
+import { getAvailableProducts, updateProducts, getUpdateStatus } from './lib/controller';
 
 const express = require('express');
 const app = express();
 
 app.use(function (req, res, next) {
-	res.setHeader('Access-Control-Allow-Origin', 'https://wjisk.netlify.com');
+	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8081');
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 	res.setHeader('Access-Control-Allow-Credentials', true);
@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/get-depop-products', async (req, res, next) => {
-	getProducts()
+	getAvailableProducts()
 		.then((data) => res.send(data))
 		.catch((err) => console.error(err));
 });

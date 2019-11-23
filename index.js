@@ -21,6 +21,7 @@ app.get('/', function (req, res) {
 app.get('/get-store-id', (req, res) => {
 	const username = req.query.username;
 	console.log(username);
+	res.send({ status: 'high af' });
 })
 
 app.get('/get-depop-products', async (req, res, next) => {

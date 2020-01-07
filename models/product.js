@@ -11,6 +11,7 @@ const ProductsSchema = new Schema({
 	images: [String],
 	sold: Boolean,
 	details: Boolean,
+	timestamp: String,
 });
 
 export default mongoose.model('Product', ProductsSchema);
